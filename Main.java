@@ -5,7 +5,9 @@ public class Main
 {
   public static void main(String[] args)
   {
-    // Test code here
+    Scanner sc = new Scanner(System.in);
+    String[] arr1 = {"forest", "apple", "willow", "lake", "trees"};
+    sortAndPrintDescending(arr1);
   }
 
 
@@ -14,7 +16,13 @@ public class Main
    */
   public static void sortAndPrintDescending(String[] arr)
   {
-    System.out.println("Implement me!");
+    String[] newArr = new String[arr.length];
+    for (int i = 0; i < arr.length; i++){
+      for (String word : arr){
+        
+      }
+    }      
+    }
   }
 
   /** Precondition: No element of arr is null.
