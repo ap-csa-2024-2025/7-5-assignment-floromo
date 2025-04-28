@@ -16,12 +16,18 @@ public class Main
    */
   public static void sortAndPrintDescending(String[] arr)
   {
-    String[] newArr = new String[arr.length];
     for (int i = 0; i < arr.length; i++){
-      for (String word : arr){
-        
+      String temp = "";
+      for (int j = i+1; j < arr.length; j++){
+        if (arr[i].compareTo(arr[j])<0){
+          temp = arr[j];
+          arr[j] = arr[i];
+          arr[i] = temp;
+        }
       }
-    }      
+    }
+    for (String n : arr){
+      System.out.print(n + " ");
     }
   }
 
