@@ -8,6 +8,12 @@ public class Main
     Scanner sc = new Scanner(System.in);
     String[] arr1 = {"forest", "apple", "willow", "lake", "trees"};
     sortAndPrintDescending(arr1);
+    ArrayList<Integer> list = new ArrayList<>();
+    list.add(4);
+    list.add(6);
+    list.add(3);
+    list.add(7);
+    selectSortDescending(list);
   }
 
 
@@ -36,6 +42,21 @@ public class Main
    */
   public static void selectSortDescending(ArrayList<Integer> list)
   {
-    System.out.println("Implement me!");
+    for (int i = 0; i < list.size()-1; i++){
+      int index = i;
+      for (int j = list.indexOf(i)+1; j < list.size(); j++){
+        if (i < list.get(j)){
+          index = j;
+        }
+      }
+      if (index != i){
+        list.add(index, list.get(i));
+        list.remove(i);
+        i--;
+      }
+    }
+    for (Integer n : list){
+      System.out.print(n + " ");
+    }
   }
 }
