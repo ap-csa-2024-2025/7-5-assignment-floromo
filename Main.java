@@ -9,9 +9,9 @@ public class Main
     String[] arr1 = {"forest", "apple", "willow", "lake", "trees"};
     sortAndPrintDescending(arr1);
     ArrayList<Integer> list = new ArrayList<>();
-    list.add(4);
-    list.add(6);
     list.add(3);
+    list.add(6);
+    list.add(4);
     list.add(7);
     selectSortDescending(list);
   }
@@ -42,18 +42,17 @@ public class Main
    */
   public static void selectSortDescending(ArrayList<Integer> list)
   {
-    for (int i = 0; i < list.size()-1; i++){
-      int index = i;
-      for (int j = list.indexOf(i)+1; j < list.size(); j++){
-        if (i < list.get(j)){
-          index = j;
+    for (int i = 0; i < list.size(); i++){
+      int maxInt = i;
+      Integer max = list.get(i);
+      for (int j = i; j < list.size(); j++){
+        if (list.get(j) > list.get(maxInt)){
+          maxInt = j;
+          max = list.get(j);
         }
       }
-      if (index != i){
-        list.add(index, list.get(i));
-        list.remove(i);
-        i--;
-      }
+      list.remove(maxInt);
+      list.add(i, max);
     }
     for (Integer n : list){
       System.out.print(n + " ");
